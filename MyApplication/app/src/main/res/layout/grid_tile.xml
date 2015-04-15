@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.uk.sentinelweb.depop.test.view.SquareImageView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="@dimen/grid_item_margin"
+              android:scaleType="centerCrop"
+              android:background="@drawable/button_selector">
+</co.uk.sentinelweb.depop.test.view.SquareImageView>
