@@ -64,7 +64,6 @@ public class ViewUserFragment extends Fragment {
     GridLayoutManager mSellGridLayoutManager;
     /** grid layout manager for recylerview */
     GridLayoutManager mLikesGridLayoutManager;
-    private GridViewScrollListener mGridViewScrollListener;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -92,8 +91,7 @@ public class ViewUserFragment extends Fragment {
         mSellGridView = (RecyclerView)rootView.findViewById(R.id.view_user_selling);
         mSellGridLayoutManager = new GridLayoutManager(getActivity(),getResources().getInteger(R.integer.cols));
         mSellGridView.setLayoutManager(mSellGridLayoutManager);
-        mGridViewScrollListener = new GridViewScrollListener();
-        mSellGridView.setOnScrollListener(mGridViewScrollListener);
+        mSellGridView.setOnScrollListener(new GridViewScrollListener());
 
         mCurrentView = mSellGridView;
 
