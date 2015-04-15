@@ -98,7 +98,7 @@ public class ViewUserFragment extends Fragment {
         mLikesGridView = (RecyclerView)rootView.findViewById(R.id.view_user_likes);
         mLikesGridLayoutManager = new GridLayoutManager(getActivity(),getResources().getInteger(R.integer.cols));
         mLikesGridView.setLayoutManager(mLikesGridLayoutManager);
-
+        mLikesGridView.setOnScrollListener(new GridViewScrollListener());
 
         // intialise viewpager
         mPagerViewsArray= new ArrayList<>();
