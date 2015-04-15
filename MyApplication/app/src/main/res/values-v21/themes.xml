@@ -2,6 +2,8 @@
 <resources>
     <style name="AppTheme"  parent="AppTheme.Base">
 
-
+    </style>
+    <style name="ActionBar.Depop" parent="ActionBar.Base">
+        <item name="android:elevation">4dp</item>
     </style>
 </resources>

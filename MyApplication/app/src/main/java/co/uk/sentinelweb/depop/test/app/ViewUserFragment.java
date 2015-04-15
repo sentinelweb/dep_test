@@ -64,6 +64,7 @@ public class ViewUserFragment extends Fragment {
     GridLayoutManager mSellGridLayoutManager;
     /** grid layout manager for recylerview */
     GridLayoutManager mLikesGridLayoutManager;
+    private GridViewScrollListener mGridViewScrollListener;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -89,16 +90,17 @@ public class ViewUserFragment extends Fragment {
         mViewPager = (ViewPager)rootView.findViewById(R.id.view_user_viewpager);
 
         mSellGridView = (RecyclerView)rootView.findViewById(R.id.view_user_selling);
-        mSellGridLayoutManager = new GridLayoutManager(getActivity(),3);
+        mSellGridLayoutManager = new GridLayoutManager(getActivity(),getResources().getInteger(R.integer.cols));
         mSellGridView.setLayoutManager(mSellGridLayoutManager);
-        mSellGridView.setOnScrollListener(new GridViewScrollListener());
+        mGridViewScrollListener = new GridViewScrollListener();
+        mSellGridView.setOnScrollListener(mGridViewScrollListener);
 
         mCurrentView = mSellGridView;
 
         mLikesGridView = (RecyclerView)rootView.findViewById(R.id.view_user_likes);
-        mLikesGridLayoutManager = new GridLayoutManager(getActivity(),3);
+        mLikesGridLayoutManager = new GridLayoutManager(getActivity(),getResources().getInteger(R.integer.cols));
         mLikesGridView.setLayoutManager(mLikesGridLayoutManager);
-        mLikesGridView.setOnScrollListener(new GridViewScrollListener());
+
 
         // intialise viewpager
         mPagerViewsArray= new ArrayList<>();
